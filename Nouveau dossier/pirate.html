@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Sécurité Compromise</title>
+
+    <style>
+
+        body {
+
+            margin: 0;
+
+            background-color: black;
+
+            color: red;
+
+            font-family: "Courier New", Courier, monospace;
+
+            text-align: center;
+
+        }
+
+        .warning {
+
+            margin-top: 20%;
+
+            font-size: 2em;
+
+            animation: clignote 1s infinite;
+
+        }
+
+        @keyframes clignote {
+
+            0% { opacity: 1; }
+
+            50% { opacity: 0; }
+
+            100% { opacity: 1; }
+
+        }
+
+        .message {
+
+            font-size: 1.2em;
+
+            margin-top: 40px;
+
+            color: white;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="warning">*** ACCÈS NON AUTORISÉ DÉTECTÉ ***</div>
+
+    <div class="message">
+
+        <p>Votre appareil est en cours d’analyse...</p>
+
+        <p>Fichiers sensibles détectés.</p>
+
+        <p>Adresse IP : <span id="ip">Récupération...</span></p>
+
+        <p><strong>Vos données sont en train d’être transférées.</strong></p>
+
+        <audio autoplay>
+
+            <source src="https://www.soundjay.com/button/beep-10.mp3" type="audio/mpeg">
+
+        </audio>
+
+    </div>
+
+
+
+    <script>
+
+        // Faux chargement d'adresse IP
+
+        setTimeout(() => {
+
+            document.getElementById("ip").textContent = "192.168.1.105";
+
+        }, 2000);
+
+
+
+        // Redirection après 10 secondes vers la page de sensibilisation
+
+        setTimeout(() => {
+            alert("Redirection en cours...");
+            window.location.href = "conseils-cyber.html";
+
+        }, 10000);
+
+    </script>
+
+</body>
+
+</html>
+
